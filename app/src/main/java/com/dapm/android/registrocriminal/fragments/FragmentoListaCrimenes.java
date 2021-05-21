@@ -1,7 +1,6 @@
-package com.dapm.android.registrocriminal;
+package com.dapm.android.registrocriminal.fragments;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +11,10 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.dapm.android.registrocriminal.R;
+import com.dapm.android.registrocriminal.models.CrimeLab;
+import com.dapm.android.registrocriminal.models.Crimen;
 
 import java.util.List;
 

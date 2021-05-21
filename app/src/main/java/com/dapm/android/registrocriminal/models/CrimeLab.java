@@ -1,4 +1,4 @@
-package com.dapm.android.registrocriminal;
+package com.dapm.android.registrocriminal.models;
 
 import android.content.Context;
 

@@ -1,4 +1,4 @@
-package com.dapm.android.registrocriminal;
+package com.dapm.android.registrocriminal.fragments;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -14,6 +14,9 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.dapm.android.registrocriminal.R;
+import com.dapm.android.registrocriminal.models.Crimen;
 
 public class FragmentoCrimen extends Fragment {
     private Crimen mCrimen;
