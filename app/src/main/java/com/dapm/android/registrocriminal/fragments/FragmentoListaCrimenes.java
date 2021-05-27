@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +17,7 @@ import com.dapm.android.registrocriminal.R;
 import com.dapm.android.registrocriminal.models.CrimeLab;
 import com.dapm.android.registrocriminal.models.Crimen;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class FragmentoListaCrimenes extends Fragment {
@@ -46,6 +48,7 @@ public class FragmentoListaCrimenes extends Fragment {
         private TextView mTitulo;
         private TextView mFecha;
         private Crimen mCrimen;
+        private ImageView mImageCrime;
 
         public CrimeHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.item_lista_crimen, parent, false));
@@ -54,12 +57,15 @@ public class FragmentoListaCrimenes extends Fragment {
 
             mTitulo = (TextView) itemView.findViewById(R.id.crime_title);
             mFecha = (TextView) itemView.findViewById(R.id.crime_date);
+            mImageCrime = (ImageView) itemView.findViewById(R.id.crime_resuelto);
         }
 
         public void enlazar(Crimen crimen) {
             mCrimen = crimen;
             mTitulo.setText(mCrimen.getTitle());
-            mFecha.setText(mCrimen.getDate().toString());
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy hh:mm");
+            mFecha.setText(dateFormat.format(mCrimen.getDate()));
+            mImageCrime.setVisibility(mCrimen.getResolved() ? View.VISIBLE : View.GONE);
         }
 
         @Override
@@ -72,6 +78,7 @@ public class FragmentoListaCrimenes extends Fragment {
         private TextView mTitulo;
         private TextView mFecha;
         private Crimen mCrimen;
+        private ImageView mImageCrime;
 
         public CrimeMayorHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.item_lista_crimen_mayor, parent, false));
@@ -80,12 +87,15 @@ public class FragmentoListaCrimenes extends Fragment {
 
             mTitulo = (TextView) itemView.findViewById(R.id.crime_title);
             mFecha = (TextView) itemView.findViewById(R.id.crime_date);
+            mImageCrime = (ImageView) itemView.findViewById(R.id.crime_resuelto);
         }
 
         public void enlazar(Crimen crimen) {
             mCrimen = crimen;
             mTitulo.setText(mCrimen.getTitle());
-            mFecha.setText(mCrimen.getDate().toString());
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy hh:mm");
+            mFecha.setText(dateFormat.format(mCrimen.getDate()));
+            mImageCrime.setVisibility(mCrimen.getResolved() ? View.VISIBLE : View.GONE);
         }
 
         @Override

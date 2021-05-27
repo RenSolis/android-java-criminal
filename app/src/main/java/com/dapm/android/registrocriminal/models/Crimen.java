@@ -35,6 +35,8 @@ public class Crimen {
         mResolved = resolved;
     }
 
+    public boolean getResolved() { return mResolved; }
+
     public boolean getCrimenMayor() {
         return mCrimenMayor;
     }
